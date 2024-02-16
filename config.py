@@ -65,6 +65,11 @@ if not config_path.is_file():
     })
 config_data = json_read(config_path)
 share_path = config_data['share_path']
+saving_path = config_data['saving_path']
+host = config_data['host']
+port = config_data['port']
+login = config_data['login']
+password = config_data['password']
 
 log_path = project_path.joinpath(f'{sys.argv[1]}.log' if len(sys.argv) > 1 else 'dev.log')
 logger = init_logger(file_path=log_path, tg_token=tg_token, tg_chat_id=chat_id)
